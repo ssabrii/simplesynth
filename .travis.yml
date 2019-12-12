@@ -1,4 +1,4 @@
 os: osx
 language: objective-c
 xcode_project: SimpleSynth.xcodeproj
-xcode_scheme: SimpleSynth
+script: xcodebuild -configuration Release
