@@ -1,4 +1,5 @@
 os: osx
+osx_image: xcode6.4
 language: objective-c
 xcode_project: SimpleSynth.xcodeproj
 script: xcodebuild -configuration Release -arch x86_64
