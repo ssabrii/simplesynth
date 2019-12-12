@@ -6,6 +6,7 @@ script: xcodebuild -configuration Release -arch x86_64
 before_deploy: zip SimpleSynth.app /Users/travis/build/marnen/simplesynth/build/Release/SimpleSynth.app
 
 deploy:
+  edge: true
   provider: releases
   file: SimpleSynth.app.zip
   on:
