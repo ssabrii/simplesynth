@@ -3,7 +3,12 @@ osx_image: xcode6.4
 language: objective-c
 xcode_project: SimpleSynth.xcodeproj
 script: xcodebuild -configuration Release -arch x86_64
-before_deploy: zip SimpleSynth.app /Users/travis/build/marnen/simplesynth/build/Release/SimpleSynth.app
+before_deploy:
+  - git config --local user.name "Marnen Laibow-Koser"
+  - git config --local user.email "marnen@marnen.org"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+  - zip SimpleSynth.app /Users/travis/build/marnen/simplesynth/build/Release/SimpleSynth.app
 
 deploy:
   edge: true
